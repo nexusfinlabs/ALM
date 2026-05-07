@@ -179,6 +179,7 @@ export default function Home() {
             <a href="#traceability" className="hover:text-white transition-colors">Traceability</a>
             <a href="#viewer" className="hover:text-white transition-colors">CAD Viewer</a>
             <a href="#compliance" className="hover:text-white transition-colors">Compliance</a>
+            <a href="/demo" className="font-mono font-700 text-[#00d4ff] hover:text-white transition-colors border border-[rgba(0,212,255,0.3)] px-3 py-1 rounded">PRJ-ADAS →</a>
           </div>
           <a href="mailto:hola@nexusfinlabs.com" className="text-sm font-display font-600 text-[#070709] bg-[#00d4ff] px-4 py-1.5 rounded hover:bg-white transition-colors">
             Request Demo

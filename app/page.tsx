@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef, useState, useCallback } from 'react'
+import LogoCarousel from '@/components/LogoCarousel'
 
 const TOOLS = [
   { name: 'PTC Codebeamer', abbr: 'CB', color: '#e63946', bg: 'rgba(230,57,70,0.12)' },
@@ -214,29 +215,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full fade-up delay-5">
-          <p className="text-center font-mono text-[10px] text-[#4b5563] uppercase tracking-widest mb-5">Integrates with your engineering stack</p>
-          <div className="overflow-hidden relative">
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#070709] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#070709] to-transparent z-10 pointer-events-none" />
-            <div className="logos-track">
-              {DOUBLED.map((t, i) => (
-                <div key={i} className="flex items-center gap-2.5 px-5 py-2">
-                  <div
-                    className="flex items-center justify-center w-9 h-9 rounded-lg border font-mono text-[10px] font-600 flex-shrink-0"
-                    style={{ background: t.bg, borderColor: `${t.color}30`, color: t.color }}
-                  >
-                    {t.abbr}
-                  </div>
-                  <span className="font-display font-600 text-sm text-[#8892a4] whitespace-nowrap hover:text-white transition-colors cursor-default">
-                    {t.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+        <div className="w-full fade-up delay-5"><LogoCarousel /></div></section>
 
       <section className="max-w-7xl mx-auto px-6 py-24" id="traceability">
         <div className="mb-16">

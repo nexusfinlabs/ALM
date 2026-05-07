@@ -1,0 +1,48 @@
+=== URN 1 ===
+File: PIEZA PB013-SPHION INNOVATION.stp
+
+OK Token
+OK Bucket exists
+OK Signed URL
+OK Uploaded 260 KB
+OK Finalized
+OK Translation started
+  inprogress 0% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              success complete            
+OK Done
+
+============================================================
+URN:
+dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6c3RydXhhaS1tb2RlbHMvUElFWkFfUEIwMTMtU1BISU9OX0lOTk9WQVRJT04uc3Rw
+============================================================
+=== URN 2 ===
+File: Single_Cylinder_Engine.SLDPRT
+
+OK Token
+OK Bucket exists
+OK Signed URL
+OK Uploaded 1232 KB
+OK Finalized
+OK Translation started
+  inprogress 0% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              success complete            
+OK Done
+
+============================================================
+URN:
+dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6c3RydXhhaS1tb2RlbHMvU2luZ2xlX0N5bGluZGVyX0VuZ2luZS5TTERQUlQ
+============================================================
+=== URN 3 ===
+File: 9-1355795-1.sldprt
+
+OK Token
+OK Bucket exists
+OK Signed URL
+OK Uploaded 1710 KB
+OK Finalized
+OK Translation started
+  inprogress 0% complete              inprogress 0% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              inprogress 99% complete              success complete            
+OK Done
+
+============================================================
+URN:
+dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6c3RydXhhaS1tb2RlbHMvOS0xMzU1Nzk1LTEuc2xkcHJ0
+============================================================

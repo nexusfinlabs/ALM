@@ -12,9 +12,7 @@ const LOGOS = [
   { name: 'Siemens',      slug: 'siemens',          color: '00a0c8' },
   { name: 'Autodesk',     slug: 'autodesk',         color: 'ffffff' },
   { name: 'Dassault',     slug: 'dassaultsystemes', color: '0093d0' },
-  { name: 'Mathworks',    slug: 'mathworks',        color: 'e16737' },
   { name: 'Mathematica',  slug: 'wolframmathematica', color: 'dd1100' },
-  { name: 'IBM',          slug: 'ibm',              color: '0066cc' },
 ]
 
 const TEXT_LOGOS = [
@@ -54,21 +52,13 @@ export default function LogoCarousel() {
             <div key={i} className="flex items-center gap-4 px-10 py-4">
               {l.type === 'svg' ? (
                 <>
-                  <img
-                    src={`https://cdn.simpleicons.org/${l.slug}/${l.color}`}
-                    alt={l.name}
-                    className="h-12 w-12"
-                    loading="lazy"
-                  />
-                  <span className="font-display font-700 text-lg text-white whitespace-nowrap">
-                    {l.name}
-                  </span>
+                  <img src={`https://cdn.simpleicons.org/${l.slug}/${l.color}`}
+                    alt={l.name} className="h-12 w-12" loading="lazy" />
+                  <span className="font-display font-700 text-lg text-white whitespace-nowrap">{l.name}</span>
                 </>
               ) : (
-                <div
-                  className="font-display font-700 text-lg whitespace-nowrap px-4 py-2 rounded-lg border-2"
-                  style={{ color: l.color, borderColor: l.color, background: `${l.color}15` }}
-                >
+                <div className="font-display font-700 text-lg whitespace-nowrap px-4 py-2 rounded-lg border-2"
+                  style={{ color: l.color, borderColor: l.color, background: `${l.color}15` }}>
                   {l.name}
                 </div>
               )}

@@ -221,8 +221,8 @@ export default function Home() {
         <div className="mb-16">
           <div className="font-mono text-xs text-[#00d4ff] tracking-widest uppercase mb-3">Traceability Engine</div>
           <h2 className="font-display font-700 text-4xl md:text-5xl text-white leading-tight mb-4">
-            Full chain. Zero gaps.<br />
-            <span className="text-[#8892a4] font-300">System → Software → Test → Evidence.</span>
+            Traceability for Engineering Teams<br />
+            <span className="text-[#8892a4] font-300">System (HW+SW) → Test → Evidence.</span>
           </h2>
           <p className="text-[#8892a4] font-body max-w-xl leading-relaxed">
             Every requirement linked to its origin, its implementation, its test case, and its compliance evidence.
@@ -279,11 +279,13 @@ export default function Home() {
           <div className="font-mono text-xs text-[#f59e0b] tracking-widest uppercase mb-3">Live CAD Integration</div>
           <h2 className="font-display font-700 text-4xl text-white mb-4">
             CAD artifacts linked<br />
-            <span className="text-[#8892a4] font-300">directly to requirements.</span>
+            <span className="text-[#8892a4] font-300">across the engineering toolchain.</span>
           </h2>
-          <p className="text-[#8892a4] font-body max-w-xl leading-relaxed">
-            Drop any CAD file — STEP, CATIA, SOLIDWORKS, 3DXML. It uploads to APS, translates automatically and renders inline.
-          </p>
+          <ul className="text-[#8892a4] font-body max-w-xl leading-relaxed space-y-1.5 mt-4">
+            <li className="flex items-center gap-2"><span className="text-[#00d4ff]">→</span> CAD artifacts linked to <span className="text-white font-500">IBM DOORS</span> requirements</li>
+            <li className="flex items-center gap-2"><span className="text-[#00d4ff]">→</span> SW tests linked to <span className="text-white font-500">Jira</span> and <span className="text-white font-500">Confluence</span></li>
+            <li className="flex items-center gap-2"><span className="text-[#00d4ff]">→</span> HW tests linked to <span className="text-white font-500">PTC Codebeamer</span></li>
+          </ul>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">

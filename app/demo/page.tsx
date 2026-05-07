@@ -1,6 +1,7 @@
 'use client'
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
+import AspiceVModel from '@/components/AspiceVModel'
 
 const DEFAULT_URN = 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6c3RydXhhaS1tb2RlbHMvUElFWkFfUEIwMTMtU1BISU9OX0lOTk9WQVRJT04uc3Rw'
 
@@ -185,59 +186,7 @@ export default function DemoPage() {
           </div>
         </div>
 
-        <div className="border border-[rgba(255,255,255,0.06)] rounded-xl bg-[#0d0d10] p-6">
-          <div className="font-mono text-xs text-[#00d4ff] uppercase tracking-widest mb-4">Traceability Chain</div>
-
-          <svg viewBox="0 0 1400 240" className="w-full" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                <path d="M 0 0 L 10 5 L 0 10 z" fill="#00d4ff" />
-              </marker>
-            </defs>
-
-            {[
-              { x: 60,   color: '#00d4ff', label: 'PRODUCT REQ',   id: 'ADAS-PROD-002', desc: 'Autonomous Emergency Braking', tool: 'IBM DOORS Next' },
-              { x: 340,  color: '#a78bfa', label: 'HARDWARE REQ',  id: 'ADAS-HW-002',   desc: 'LIDAR 905nm 200m range',         tool: 'PTC Codebeamer' },
-              { x: 620,  color: '#f59e0b', label: 'SOFTWARE REQ',  id: 'ADAS-SW-002',   desc: 'Brake response < 150ms',         tool: 'PTC Codebeamer' },
-              { x: 900,  color: '#4ade80', label: 'TEST CASE',     id: 'ADAS-TC-002',   desc: 'Verify response timing HIL',     tool: 'Jira + Confluence' },
-              { x: 1180, color: '#22c55e', label: 'EVIDENCE',      id: 'TR-2025-Q4-12', desc: 'Test report v2.1 · PASSED',      tool: 'Confluence' },
-            ].map((n, i, arr) => (
-              <g key={i}>
-                {i < arr.length - 1 && (
-                  <line x1={n.x + 220} y1={120} x2={arr[i + 1].x} y2={120} stroke="#00d4ff" strokeWidth="2" strokeDasharray="6 4" markerEnd="url(#arr)" opacity="0.7" />
-                )}
-                <rect x={n.x} y={50} width={220} height={140} rx="10" fill="#141418" stroke={n.color} strokeWidth="1.5" />
-                <text x={n.x + 14} y={75}  fill={n.color}  fontSize="10" fontFamily="monospace" letterSpacing="1.5">{n.label}</text>
-                <text x={n.x + 14} y={102} fill={n.color}  fontSize="14" fontFamily="monospace" fontWeight="700">{n.id}</text>
-                <text x={n.x + 14} y={128} fill="#ffffff" fontSize="12" fontFamily="sans-serif">{n.desc}</text>
-                <text x={n.x + 14} y={166} fill="#8892a4" fontSize="10" fontFamily="monospace">{n.tool}</text>
-              </g>
-            ))}
-          </svg>
-
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div className="border border-[rgba(74,222,128,0.2)] bg-[rgba(74,222,128,0.04)] rounded-lg p-3">
-              <div className="font-mono text-[10px] text-[#4ade80] uppercase tracking-widest mb-1">ISO 26262</div>
-              <div className="font-display font-700 text-xl text-[#4ade80]">87%</div>
-              <div className="font-mono text-[10px] text-[#8892a4]">Compliant</div>
-            </div>
-            <div className="border border-[rgba(245,158,11,0.2)] bg-[rgba(245,158,11,0.04)] rounded-lg p-3">
-              <div className="font-mono text-[10px] text-[#f59e0b] uppercase tracking-widest mb-1">IATF 16949</div>
-              <div className="font-display font-700 text-xl text-[#f59e0b]">73%</div>
-              <div className="font-mono text-[10px] text-[#8892a4]">Partial</div>
-            </div>
-            <div className="border border-[rgba(74,222,128,0.2)] bg-[rgba(74,222,128,0.04)] rounded-lg p-3">
-              <div className="font-mono text-[10px] text-[#4ade80] uppercase tracking-widest mb-1">ASPICE L2</div>
-              <div className="font-display font-700 text-xl text-[#4ade80]">81%</div>
-              <div className="font-mono text-[10px] text-[#8892a4]">Compliant</div>
-            </div>
-            <div className="border border-[rgba(248,113,113,0.2)] bg-[rgba(248,113,113,0.04)] rounded-lg p-3">
-              <div className="font-mono text-[10px] text-[#f87171] uppercase tracking-widest mb-1">Open Issues</div>
-              <div className="font-display font-700 text-xl text-[#f87171]">3</div>
-              <div className="font-mono text-[10px] text-[#8892a4]">ADAS-SW-003 failed</div>
-            </div>
-          </div>
-        </div>
+        <AspiceVModel />
       </div>
     </main>
   )

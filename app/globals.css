@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyan: #00d4ff;
+  --amber: #f59e0b;
+  --carbon-950: #070709;
+  --carbon-900: #0d0d10;
+  --carbon-800: #141418;
+  --carbon-700: #1c1c22;
+  --carbon-600: #26262e;
+  --steel: #8892a4;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--carbon-950);
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), 0 0 60px rgba(0, 212, 255, 0.05);
+}
+
+.glow-amber {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+.border-glow {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.1) inset;
+}
+
+.trace-line {
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: traceFlow 2.5s ease-in-out infinite;
+}
+
+@keyframes traceFlow {
+  0% { opacity: 0; transform: translateX(-100%); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(100%); }
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.08);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fadeUp 0.6s ease forwards; }
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+.delay-4 { animation-delay: 0.4s; opacity: 0; }
+.delay-5 { animation-delay: 0.5s; opacity: 0; }
+
+.forge-viewer-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background: var(--carbon-800);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#forgeViewer {
+  width: 100%;
+  height: 100%;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logos-track {
+  display: flex;
+  gap: 0;
+  animation: scrollLogos 25s linear infinite;
+  width: max-content;
+}
+
+.logos-track:hover { animation-play-state: paused; }

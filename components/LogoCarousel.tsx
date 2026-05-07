@@ -15,28 +15,7 @@ const LOGOS = [
   { name: 'Mathematica',  slug: 'wolframmathematica', color: 'dd1100' },
 ]
 
-const TEXT_LOGOS = [
-  { name: 'PTC Codebeamer', color: '#ff4757' },
-  { name: 'IBM DOORS Next', color: '#3b82f6' },
-  { name: 'Polarion ALM',   color: '#06b6d4' },
-  { name: 'Jama Connect',   color: '#fb923c' },
-  { name: 'Simulink',       color: '#0076a8' },
-  { name: 'MATLAB',         color: '#e16737' },
-  { name: 'ANSYS',          color: '#ffb612' },
-  { name: 'COMSOL',         color: '#004e8f' },
-  { name: 'LabVIEW',        color: '#fdb515' },
-  { name: 'Modelica',       color: '#5cb3e6' },
-  { name: 'Perforce Helix', color: '#a855f7' },
-  { name: 'Visure',         color: '#22c55e' },
-  { name: 'Trace.Space',    color: '#fbbf24' },
-  { name: 'Ansys Medini',   color: '#ffb100' },
-]
-
-const ALL = [
-  ...LOGOS.map(l => ({ type: 'svg' as const, ...l })),
-  ...TEXT_LOGOS.map(l => ({ type: 'text' as const, ...l })),
-]
-const DOUBLED = [...ALL, ...ALL]
+const DOUBLED = [...LOGOS, ...LOGOS]
 
 export default function LogoCarousel() {
   return (
@@ -50,18 +29,9 @@ export default function LogoCarousel() {
         <div className="logos-track">
           {DOUBLED.map((l, i) => (
             <div key={i} className="flex items-center gap-4 px-10 py-4">
-              {l.type === 'svg' ? (
-                <>
-                  <img src={`https://cdn.simpleicons.org/${l.slug}/${l.color}`}
-                    alt={l.name} className="h-12 w-12" loading="lazy" />
-                  <span className="font-display font-700 text-lg text-white whitespace-nowrap">{l.name}</span>
-                </>
-              ) : (
-                <div className="font-display font-700 text-lg whitespace-nowrap px-4 py-2 rounded-lg border-2"
-                  style={{ color: l.color, borderColor: l.color, background: `${l.color}15` }}>
-                  {l.name}
-                </div>
-              )}
+              <img src={`https://cdn.simpleicons.org/${l.slug}/${l.color}`}
+                alt={l.name} className="h-12 w-12" loading="lazy" />
+              <span className="font-display font-700 text-lg text-white whitespace-nowrap">{l.name}</span>
             </div>
           ))}
         </div>

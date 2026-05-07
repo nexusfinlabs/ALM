@@ -1,7 +1,6 @@
 'use client'
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
-
-declare global { interface Window { Autodesk: any } }
 
 export default function ViewerPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -30,14 +29,15 @@ export default function ViewerPage() {
     const { access_token } = await r.json()
     if (!access_token) { log('NO TOKEN'); return }
     log('Token OK')
-    window.Autodesk.Viewing.Initializer(
+    const Autodesk = (window as any).Autodesk
+    Autodesk.Viewing.Initializer(
       { env: 'AutodeskProduction2', api: 'streamingV2', accessToken: access_token },
       () => {
         log('Init OK')
-        const v = new window.Autodesk.Viewing.GuiViewer3D(containerRef.current)
+        const v = new Autodesk.Viewing.GuiViewer3D(containerRef.current)
         v.start()
         log('Viewer started')
-        window.Autodesk.Viewing.Document.load(
+        Autodesk.Viewing.Document.load(
           'urn:' + urn,
           (doc: any) => {
             log('Doc loaded')

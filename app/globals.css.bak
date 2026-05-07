@@ -105,7 +105,7 @@ body {
 .logos-track {
   display: flex;
   gap: 0;
-  animation: scrollLogos 80s linear infinite;
+  animation: scrollLogos 25s linear infinite;
   width: max-content;
 }
 

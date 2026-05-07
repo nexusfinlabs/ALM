@@ -274,109 +274,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-24" id="viewer">
-        <div className="mb-10">
-          <div className="font-mono text-xs text-[#f59e0b] tracking-widest uppercase mb-3">Live CAD Integration</div>
-          <h2 className="font-display font-700 text-4xl text-white mb-4">
-            CAD artifacts linked<br />
-            <span className="text-[#8892a4] font-300">across the engineering toolchain.</span>
-          </h2>
-          <ul className="text-[#8892a4] font-body max-w-xl leading-relaxed space-y-1.5 mt-4">
-            <li className="flex items-center gap-2"><span className="text-[#00d4ff]">→</span> CAD artifacts linked to <span className="text-white font-500">IBM DOORS</span> requirements</li>
-            <li className="flex items-center gap-2"><span className="text-[#00d4ff]">→</span> SW tests linked to <span className="text-white font-500">Jira</span> and <span className="text-white font-500">Confluence</span></li>
-            <li className="flex items-center gap-2"><span className="text-[#00d4ff]">→</span> HW tests linked to <span className="text-white font-500">PTC Codebeamer</span></li>
-          </ul>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-          {CAD_FORMATS.map((f, i) => (
-            <div key={i} className="border border-[rgba(245,158,11,0.15)] bg-[rgba(245,158,11,0.03)] rounded p-3">
-              <div className="font-mono text-sm text-[#f59e0b] font-500 mb-0.5">{f.ext}</div>
-              <div className="font-body text-xs text-[#8892a4]">{f.src}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="border border-[rgba(0,212,255,0.15)] rounded-xl overflow-hidden bg-[#0d0d10]">
-          <div className="border-b border-[rgba(0,212,255,0.1)] px-5 py-3 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className={`w-2 h-2 rounded-full ${uploadState === 'ready' ? 'bg-[#4ade80]' : uploadState === 'error' ? 'bg-[#f87171]' : 'bg-[#00d4ff]'}`}
-                style={uploadState !== 'idle' ? { boxShadow: `0 0 6px currentColor` } : {}} />
-              <span className="font-mono text-xs text-[#8892a4]">
-                Linked to: <span className="text-[#00d4ff]">SYS-002</span> — ICE→EV transition module
-                {fileName && <span className="text-[#f59e0b] ml-2">· {fileName}</span>}
-              </span>
-            </div>
-            <span className="font-mono text-[10px] text-[#8892a4] border border-[rgba(136,146,164,0.2)] px-2 py-0.5 rounded">APS Viewer v7</span>
+      <section className="px-6 py-12" id="viewer">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="mb-6 text-center">
+            <div className="font-mono text-xs text-[#f59e0b] tracking-widest uppercase mb-3">Live Demo · ADAS Sensor Module</div>
+            <h2 className="font-display font-700 text-4xl text-white mb-3">
+              Try it now — <span className="text-[#00d4ff]">interactive</span>
+            </h2>
+            <p className="text-[#8892a4] font-body max-w-2xl mx-auto leading-relaxed">
+              Real CAD rendered live · click ASPICE processes · explore traceability across HW, SW and tests.
+            </p>
           </div>
-
-          <div className="p-5">
-            <div
-              className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all mb-4 ${
-                isDragging ? 'border-[#00d4ff] bg-[rgba(0,212,255,0.06)]' : 'border-[rgba(255,255,255,0.1)] hover:border-[rgba(0,212,255,0.3)] hover:bg-[rgba(0,212,255,0.02)]'
-              }`}
-              onDragOver={e => { e.preventDefault(); setIsDragging(true) }}
-              onDragLeave={() => setIsDragging(false)}
-              onDrop={onDrop}
-              onClick={() => fileInputRef.current?.click()}
-            >
-              <input ref={fileInputRef} type="file" className="hidden"
-                accept=".step,.stp,.iges,.igs,.obj,.stl,.dwg,.dxf,.ifc,.jt,.3dxml,.CATPart,.CATProduct,.sldprt,.sldasm,.rvt,.nwd,.nwc"
-                onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f) }}
-              />
-              {uploadState === 'idle' ? (
-                <>
-                  <div className="font-mono text-[#00d4ff] text-2xl mb-2">⊕</div>
-                  <div className="font-display font-600 text-white text-sm mb-1">Drop CAD file here or click to browse</div>
-                  <div className="font-mono text-xs text-[#4b5563]">STEP · CATIA · SOLIDWORKS · 3DXML · JT · OBJ · STL · RVT · DWG</div>
-                </>
-              ) : (
-                <div className="flex items-center justify-center gap-3">
-                  {uploadState !== 'ready' && uploadState !== 'error' && (
-                    <div className="w-4 h-4 border-2 border-[#00d4ff] border-t-transparent rounded-full animate-spin" />
-                  )}
-                  <span className={`font-mono text-sm ${
-                    uploadState === 'ready' ? 'text-[#4ade80]' :
-                    uploadState === 'error' ? 'text-[#f87171]' : 'text-[#00d4ff]'
-                  }`}>
-                    {uploadState === 'ready' ? '✓ ' : uploadState === 'error' ? '✗ ' : ''}{uploadMsg}
-                  </span>
-                </div>
-              )}
-            </div>
-
-            <div className="flex gap-3 mb-4">
-              <input
-                type="text"
-                value={manualUrn}
-                onChange={e => setManualUrn(e.target.value)}
-                placeholder="Or paste APS model URN (base64) directly..."
-                className="flex-1 bg-[#141418] border border-[rgba(255,255,255,0.1)] rounded px-4 py-2 font-mono text-xs text-white placeholder-[#4b5563] focus:outline-none focus:border-[rgba(0,212,255,0.4)]"
-              />
-              <button
-                onClick={loadManualUrn}
-                disabled={!manualUrn.trim()}
-                className="font-display font-600 text-xs text-[#070709] bg-[#00d4ff] px-5 py-2 rounded hover:bg-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-              >
-                Load
-              </button>
-            </div>
-
-            <div className="forge-viewer-container">
-              <div ref={viewerRef} id="forgeViewer" />
-              {uploadState === 'idle' && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                  <div className="w-14 h-14 rounded-xl border border-[rgba(0,212,255,0.2)] flex items-center justify-center mb-3 animate-float">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                      <path d="M14 3L25 9V19L14 25L3 19V9L14 3Z" stroke="#00d4ff" strokeWidth="1.5" strokeLinejoin="round"/>
-                      <path d="M14 3v22M3 9l11 6 11-6" stroke="#00d4ff" strokeWidth="1" strokeOpacity="0.3" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div className="font-display font-600 text-white text-sm mb-1">3D Model Viewer</div>
-                  <div className="font-mono text-xs text-[#4b5563]">APS → OSS → Model Derivative → SVF2</div>
-                </div>
-              )}
-            </div>
+          <div className="border border-[rgba(0,212,255,0.2)] rounded-xl overflow-hidden bg-[#0d0d10]">
+            <iframe src="/demo" className="w-full" style={{ height: '1600px', border: 0 }} title="NexusALM Live Demo" />
+          </div>
+          <div className="text-center mt-4">
+            <a href="/demo" className="font-mono text-xs text-[#00d4ff] hover:text-white transition-colors">Open in full screen →</a>
           </div>
         </div>
       </section>

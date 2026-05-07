@@ -1,0 +1,9 @@
+Summary,Description,Priority,Status
+ADAS-SW-001 Lane detection algorithm timing,The lane detection algorithm shall complete analysis within 100ms per camera frame at 30fps. ASIL B - Reference: ADAS-SYS-001,High,New
+ADAS-SW-002 Emergency brake controller response,The brake actuator controller shall send PWM command within 150ms of object detection trigger. ASIL D - Reference: ADAS-SYS-002,Critical,New
+ADAS-SW-003 CNN object classifier accuracy,The CNN classifier shall achieve >99.5% precision on EuroNCAP vulnerable road user dataset. ASIL C - Reference: ADAS-SYS-003,High,New
+ADAS-SW-004 Sensor fusion scheduler,The Kalman filter task shall execute at 50Hz minimum integrating LIDAR camera and radar streams. ASIL B - Reference: ADAS-SYS-004,High,New
+ADAS-SW-005 Watchdog fail-safe handler,The watchdog handler shall transition to fail-safe mode within 50ms of detected fault. ASIL D - Reference: ADAS-SYS-005,Critical,New
+ADAS-SW-006 Diagnostic event logger,The diagnostic logger shall write all critical events to non-volatile memory with RTC timestamp,Medium,New
+ADAS-SW-007 OTA update verification,The OTA update module shall verify firmware CRC-32 before applying flash,Medium,New
+ADAS-SW-008 HMI alert dispatcher,The HMI module shall display visual and audible alerts within 200ms of event trigger,Medium,New

@@ -1,19 +1,20 @@
 'use client'
 
 const LOGOS = [
-  { name: 'Jira',         slug: 'jira',           color: '0052cc' },
-  { name: 'Confluence',   slug: 'confluence',     color: '2684ff' },
-  { name: 'IBM',          slug: 'ibm',            color: '0066cc' },
-  { name: 'Jenkins',      slug: 'jenkins',        color: 'd33833' },
-  { name: 'GitHub',       slug: 'github',         color: 'ffffff' },
-  { name: 'GitLab',       slug: 'gitlab',         color: 'fc6d26' },
-  { name: 'Python',       slug: 'python',         color: 'ffd43b' },
-  { name: 'Docker',       slug: 'docker',         color: '2496ed' },
-  { name: 'Kubernetes',   slug: 'kubernetes',     color: '326ce5' },
-  { name: 'Bitbucket',    slug: 'bitbucket',      color: '2684ff' },
-  { name: 'Siemens',      slug: 'siemens',        color: '00a0c8' },
-  { name: 'Autodesk',     slug: 'autodesk',       color: 'ffffff' },
+  { name: 'Jira',         slug: 'jira',             color: '0052cc' },
+  { name: 'Confluence',   slug: 'confluence',       color: '2684ff' },
+  { name: 'Jenkins',      slug: 'jenkins',          color: 'd33833' },
+  { name: 'GitHub',       slug: 'github',           color: 'ffffff' },
+  { name: 'GitLab',       slug: 'gitlab',           color: 'fc6d26' },
+  { name: 'Python',       slug: 'python',           color: 'ffd43b' },
+  { name: 'Docker',       slug: 'docker',           color: '2496ed' },
+  { name: 'Bitbucket',    slug: 'bitbucket',        color: '2684ff' },
+  { name: 'Siemens',      slug: 'siemens',          color: '00a0c8' },
+  { name: 'Autodesk',     slug: 'autodesk',         color: 'ffffff' },
   { name: 'Dassault',     slug: 'dassaultsystemes', color: '0093d0' },
+  { name: 'Mathworks',    slug: 'mathworks',        color: 'e16737' },
+  { name: 'Mathematica',  slug: 'wolframmathematica', color: 'dd1100' },
+  { name: 'IBM',          slug: 'ibm',              color: '0066cc' },
 ]
 
 const TEXT_LOGOS = [
@@ -21,6 +22,12 @@ const TEXT_LOGOS = [
   { name: 'IBM DOORS Next', color: '#3b82f6' },
   { name: 'Polarion ALM',   color: '#06b6d4' },
   { name: 'Jama Connect',   color: '#fb923c' },
+  { name: 'Simulink',       color: '#0076a8' },
+  { name: 'MATLAB',         color: '#e16737' },
+  { name: 'ANSYS',          color: '#ffb612' },
+  { name: 'COMSOL',         color: '#004e8f' },
+  { name: 'LabVIEW',        color: '#fdb515' },
+  { name: 'Modelica',       color: '#5cb3e6' },
   { name: 'Perforce Helix', color: '#a855f7' },
   { name: 'Visure',         color: '#22c55e' },
   { name: 'Trace.Space',    color: '#fbbf24' },
@@ -37,7 +44,7 @@ export default function LogoCarousel() {
   return (
     <div className="w-full">
       <p className="text-center font-mono text-[10px] text-[#8892a4] uppercase tracking-widest mb-8">
-        Integrates with your engineering stack
+        Integrates with your engineering & simulation stack
       </p>
       <div className="overflow-hidden relative">
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#070709] to-transparent z-10 pointer-events-none" />

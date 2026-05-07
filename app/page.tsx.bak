@@ -90,7 +90,7 @@ export default function Home() {
       link.rel = 'stylesheet'
       link.href = 'https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css'
       document.head.appendChild(link)
-      window.Autodesk.Viewing.Initializer({ env: "AutodeskProduction2", api: "streamingV2", accessToken: access_token }, () => {
+      window.Autodesk.Viewing.Initializer({ accessToken: access_token }, () => {
         if (!viewerRef.current) return
         const viewer = new window.Autodesk.Viewing.GuiViewer3D(viewerRef.current)
         viewer.start()
